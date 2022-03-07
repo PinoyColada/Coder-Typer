@@ -1,24 +1,50 @@
 html {
-    background-image: url(https://i.ibb.co/LxKMbFh/Screen-Shot-2022-03-07-at-2-12-25-PM.png);
-    background-size: cover;
+    background-image: url(https://i.ibb.co/HDcsTwb/Screen-Shot-2022-03-07-at-3-35-56-PM.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: #1e1e1e;
+}
+
+.space {
+    padding-top: 39px;
+}
+
+#space2 {
+    padding-top: 211px;
 }
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
-
-#space {
-    padding-top: 40px;
-}
-
 
 .facepic {
     display: flex;
     background-image: url(https://avatars.githubusercontent.com/u/99372105?v=4);
-    background-size: 300px;
-    width: 300px;
-    height: 300px;
+    background-size: cover;
+    width: 250px;
+    height: 250px;
     border-radius: 175px;
 }
+
+
+#github {
+    padding-left: 30%;
+    padding-right: 50%;
+    font-size: 30px;
+}
+
+#linkedin {
+    padding-left: 22%;
+    padding-right: 12%;
+    font-size: 30px;
+}
+
+a {
+    color: #d98e73;
+}
+
+a:hover {
+    color: white;
+}
+
