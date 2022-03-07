@@ -1,0 +1,24 @@
+html {
+    background-image: url(https://i.ibb.co/LxKMbFh/Screen-Shot-2022-03-07-at-2-12-25-PM.png);
+    background-size: cover;
+    background-color: #1e1e1e;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#space {
+    padding-top: 40px;
+}
+
+
+.facepic {
+    display: flex;
+    background-image: url(https://avatars.githubusercontent.com/u/99372105?v=4);
+    background-size: 300px;
+    width: 300px;
+    height: 300px;
+    border-radius: 175px;
+}
