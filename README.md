@@ -4,7 +4,7 @@
 
 ### By: Ryan Hatamosa
 
-#### [GitHub](https://github.com/PinoyColada) | [LinkedIn](https://www.linkedin.com/feed/) | [HackerRank](https://www.hackerrank.com/pinoydol_colada)
+#### [GitHub](https://github.com/PinoyColada) | [LinkedIn](https://www.linkedin.com/in/ryan-hatamosa-ab9989156/) | [HackerRank](https://www.hackerrank.com/pinoydol_colada)
 ***
 
 ### ***Description***
