@@ -15,7 +15,7 @@
 #### ***For those developers who want to increase their WPM:*** Maybe you're already a professional at coding and want to amp up your typing speed. This game will fix that problem for you.
 #### ***For those fast typers who are just getting into programming:*** Maybe you're the fastest typer in your neighborhood and have this billion dollar app idea in mind. This game will help you be aware of the coding structures you will see while learning how to code.
 #### ***For both experienced and fast-typing developers:*** Congrats! You reached the ultimate purpose of this game! You may ask to youself "Why should you play this game? You are already a professional in both fields." Some reasons are that you'll be open to syntax you haven't used that much before and may use on future projects or maybe just need a refresher on Javascript after a long vacation from your software engineer job!
-####  
+#### Check my progress of the game here at my [Trello](https://trello.com/b/f3drJQFz/code-typing-game)
 ***
 
 ### ***Technologies Used***
