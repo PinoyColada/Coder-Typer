@@ -1,0 +1,43 @@
+html {
+    background-color: #1e1e1e;
+}
+
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+nav {
+    flex: 0 0 20vw;
+    background-color: blue;
+}
+
+article {
+    flex: 1;
+    background-color: plum;
+}
+
+.topDown {
+    height: 10vh;
+    background-color: orange;
+}
+
+.pad {
+    padding: 1em;
+}
+
+#space {
+    padding-top: 80px;
+    background-color: black;
+}
+
+#container {
+    display: flex;
+    flex: 1;
+}
