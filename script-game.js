@@ -47,11 +47,13 @@ codeEntered.addEventListener('input', () => {
 
     if (win) {
         alert("You completed the game succesfully!");
+        time = 60;
         detectCode();
     }
 });
 
 recycleBtn.addEventListener('click', () => {
+    time = 60;
     detectCode();
 });
 
