@@ -2,7 +2,9 @@ const codeShown = document.getElementById("words");
 const codeEntered = document.getElementById("input");
 let arrayOfCode = [
     "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber)); ",
-    "let > = greater than >"
+    "const array1 = ['a', 'b', 'c', 'd', 'e']; console.log(array1.copyWithin(0, 3, 4)); console.log(array1.copyWithin(1, 3));",
+    "const isBelowThreshold = (currentValue) => currentValue < 40; const array1 = [1, 30, 39, 29, 10, 13]; console.log(array1.every(isBelowThreshold));",
+    "const array1 = [1, 2, 3]; console.log(array1.includes(2)); const pets = ['cat', 'dog', 'bat']; console.log(pets.includes('cat'));"
 ]
 
 codeEntered.addEventListener('input', () => {
@@ -31,11 +33,11 @@ codeEntered.addEventListener('input', () => {
     })
 });
 
-// This function gets a code from the arrayOfCode and breaks down the string into letters
+// This function gets a random code from the arrayOfCode and breaks down the string into letters
 // For each letter, a span is being created containing that letter and is appended to
 // the html of the element id "words"
 function detectCode() {
-    document.getElementById("words").innerHTML = arrayOfCode[1];
+    document.getElementById("words").innerHTML = arrayOfCode[Math.floor(Math.random() * arrayOfCode.length)];
     const codeToType = document.getElementById("words").innerHTML;
     codeShown.innerHTML = '';
     codeToType.replace(/&lt;/g,"<").replace(/&gt;/g,">").split('').forEach(letter => {
