@@ -49,8 +49,6 @@ article {
 }
 
 #words {
-    display: flex;
-    flex-basis: auto;
     background-color: lightblue;
     padding: 1em;
 }
@@ -64,3 +62,16 @@ article {
     border-radius: 10px;
     padding: 1em;
 }
+
+span {
+    white-space: pre;
+
+}
+.right {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
+
