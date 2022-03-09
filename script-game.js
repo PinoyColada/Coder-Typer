@@ -1,5 +1,6 @@
 const codeShown = document.getElementById("words");
 const codeEntered = document.getElementById("input");
+const recycleBtn = document.getElementById("recycle");
 let arrayOfCode = [
     "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber)); ",
     "const array1 = ['a', 'b', 'c', 'd', 'e']; console.log(array1.copyWithin(0, 3, 4)); console.log(array1.copyWithin(1, 3));",
@@ -45,6 +46,10 @@ codeEntered.addEventListener('input', () => {
         alert("You completed the game succesfully!");
         detectCode();
     }
+});
+
+recycleBtn.addEventListener('click', () => {
+    detectCode();
 });
 
 // This function gets a random code from the arrayOfCode and breaks down the string into letters
