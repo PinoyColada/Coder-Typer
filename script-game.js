@@ -1,23 +1,32 @@
 const codeShown = document.getElementById("words");
 const codeEntered = document.getElementById("input");
 let arrayOfCode = [
-    "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber)); "
+    "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber)); ",
+    "let > = greater than >"
 ]
 
 codeEntered.addEventListener('input', () => {
     const arrayCode = codeShown.querySelectorAll('span');
     const arraySplit = codeEntered.value.split('');
-    arrayCode.forEach((letterSpace, index) => {
+    arrayCode.forEach((letterSpan, index) => {
         const letter = arraySplit[index];
-        if (letter === letterSpace.innerHTML) {
-            letterSpace.classList.add('right');
-            letterSpace.classList.remove('wrong');
+        if (letter === letterSpan.innerHTML) {
+            letterSpan.classList.add('right');
+            letterSpan.classList.remove('wrong');
         } else if (letter == null){
-            letterSpace.classList.remove('right');
-            letterSpace.classList.remove('wrong');
+            letterSpan.classList.remove('right');
+            letterSpan.classList.remove('wrong');
+        } else if (letter === ">" || letter === "<"){
+            if (letter === letterSpan.innerText){
+                letterSpan.classList.add('right');
+                letterSpan.classList.remove('wrong');
+            } else {
+                letterSpan.classList.add('wrong');
+                letterSpan.classList.remove('right');
+            }
         } else {
-            letterSpace.classList.add('wrong');
-            letterSpace.classList.remove('right');
+            letterSpan.classList.add('wrong');
+            letterSpan.classList.remove('right');
         }
     })
 });
@@ -26,10 +35,10 @@ codeEntered.addEventListener('input', () => {
 // For each letter, a span is being created containing that letter and is appended to
 // the html of the element id "words"
 function detectCode() {
-    document.getElementById("words").innerHTML = arrayOfCode[0];
+    document.getElementById("words").innerHTML = arrayOfCode[1];
     const codeToType = document.getElementById("words").innerHTML;
     codeShown.innerHTML = '';
-    codeToType.split('').forEach(letter => {
+    codeToType.replace(/&lt;/g,"<").replace(/&gt;/g,">").split('').forEach(letter => {
         if (letter === ";") {
             const letterSpan = document.createElement('span');
             const breakSpan = document.createElement('br');
