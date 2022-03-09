@@ -83,11 +83,13 @@ function detectCode() {
 function changeTimer() {
     let minutes = Math.floor(time/60);
     let seconds = time % 60;
-    if (seconds < 10) {
-        seconds = '0' + seconds;
+    if (time >= 0) {
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+        countDownTimer.innerHTML = `Timer: ${minutes}:${seconds}`;
+        time--;
     }
-    countDownTimer.innerHTML = `Timer: ${minutes}:${seconds}`;
-    time--;
 }
 
 setInterval(changeTimer, 1000);
