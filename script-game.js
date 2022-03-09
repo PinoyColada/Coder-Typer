@@ -8,6 +8,7 @@ let arrayOfCode = [
 ]
 
 codeEntered.addEventListener('input', () => {
+    let win = true;
     const arrayCode = codeShown.querySelectorAll('span');
     const arraySplit = codeEntered.value.split('');
     arrayCode.forEach((letterSpan, index) => {
@@ -18,6 +19,7 @@ codeEntered.addEventListener('input', () => {
         } else if (letter == null){
             letterSpan.classList.remove('right');
             letterSpan.classList.remove('wrong');
+            win = false;
         } else if (letter === ">" || letter === "<"){
             if (letter === letterSpan.innerText){
                 letterSpan.classList.add('right');
@@ -25,12 +27,24 @@ codeEntered.addEventListener('input', () => {
             } else {
                 letterSpan.classList.add('wrong');
                 letterSpan.classList.remove('right');
+                win = false;
             }
         } else {
-            letterSpan.classList.add('wrong');
-            letterSpan.classList.remove('right');
+            if (letterSpan.innerHTML === " "){
+                letterSpan.classList.add('right');
+                letterSpan.classList.remove('wrong');
+            } else {
+                letterSpan.classList.add('wrong');
+                letterSpan.classList.remove('right');
+                win = false;
+            }
         }
-    })
+    });
+
+    if (win) {
+        alert("You completed the game succesfully!");
+        detectCode();
+    }
 });
 
 // This function gets a random code from the arrayOfCode and breaks down the string into letters
