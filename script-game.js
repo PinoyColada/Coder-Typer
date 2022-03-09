@@ -1,6 +1,9 @@
 const codeShown = document.getElementById("words");
 const codeEntered = document.getElementById("input");
 const recycleBtn = document.getElementById("recycle");
+const countDownTimer = document.getElementById("timer");
+let time = 60;
+
 let arrayOfCode = [
     "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber)); ",
     "const array1 = ['a', 'b', 'c', 'd', 'e']; console.log(array1.copyWithin(0, 3, 4)); console.log(array1.copyWithin(1, 3));",
@@ -75,4 +78,15 @@ function detectCode() {
     codeEntered.value = null;
 }
 
+function changeTimer() {
+    let minutes = Math.floor(time/60);
+    let seconds = time % 60;
+    if (seconds < 10) {
+        seconds = '0' + seconds;
+    }
+    countDownTimer.innerHTML = `Timer: ${minutes}:${seconds}`;
+    time--;
+}
+
+setInterval(changeTimer, 1000);
 detectCode();

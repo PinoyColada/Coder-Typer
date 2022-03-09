@@ -63,6 +63,11 @@ article {
     padding: 1em;
 }
 
+#timer {
+    color: white;
+    text-align: center;
+}
+
 span {
     white-space: pre;
 
