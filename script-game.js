@@ -1,11 +1,14 @@
+let timeDuration = setInterval(gameTimer, 1000);
 const codeShown = document.getElementById("words");
 const codeEntered = document.getElementById("input");
 const recycleBtn = document.getElementById("recycle");
+const startBtn = document.getElementById("start");
 const countDownTimer = document.getElementById("timer");
 let time = 60;
+let startTime = 5;
 
 let arrayOfCode = [
-    "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber)); ",
+    "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber));",
     "const array1 = ['a', 'b', 'c', 'd', 'e']; console.log(array1.copyWithin(0, 3, 4)); console.log(array1.copyWithin(1, 3));",
     "const isBelowThreshold = (currentValue) => currentValue < 40; const array1 = [1, 30, 39, 29, 10, 13]; console.log(array1.every(isBelowThreshold));",
     "const array1 = [1, 2, 3]; console.log(array1.includes(2)); const pets = ['cat', 'dog', 'bat']; console.log(pets.includes('cat'));"
@@ -53,8 +56,13 @@ codeEntered.addEventListener('input', () => {
 });
 
 recycleBtn.addEventListener('click', () => {
-    time = 60;
+    countDownTimer.innerHTML = '';
+    clearInterval(timeDuration);
     detectCode();
+});
+
+startBtn.addEventListener('click', () => {
+    gameStart();
 });
 
 // This function gets a random code from the arrayOfCode and breaks down the string into letters
@@ -80,7 +88,7 @@ function detectCode() {
     codeEntered.value = null;
 }
 
-function changeTimer() {
+function gameTimer() {
     let minutes = Math.floor(time/60);
     let seconds = time % 60;
     if (time >= 0) {
@@ -92,5 +100,16 @@ function changeTimer() {
     }
 }
 
-setInterval(changeTimer, 1000);
+function startTimer() {
+    let seconds = startTime % 5;
+    if (time >= 0) {
+        seconds = '0' + seconds;
+        countDownTimer.innerHTML = `Game Starting in: ${seconds}`;
+    }
+}
+
+function gameStart() {
+    timeDuration;
+}
+
 detectCode();
