@@ -17,6 +17,7 @@ let gameWin = false;
 let gameLose = false;
 let mistakeCounter = 0;
 let characters = 0;
+let seconds;
 let arrayOfCode = [
     {
         codeName: "findIndex()",
@@ -106,7 +107,7 @@ codeEntered.addEventListener('input', () => {
         alert("You completed the game succesfully!");
         document.getElementById("input").disabled = true;
         document.getElementById("recycle").disabled = false;
-        wpmDiv.innerHTML = `Words per minute (WPM): ${(characters/5)/1}`;
+        wpmDiv.innerHTML = `Words per minute (WPM): ${(characters/5)/60 - 1}`;
         accuracyDiv.innerHTML = `Accuracy: ${((characters - mistakeCounter) / characters) * 100.00}%`;
         mistakesDiv.innerHTML = `Mistakes: ${mistakeCounter}`;
         gameWin = true;
@@ -122,6 +123,7 @@ function detectCode() {
     codeHeader.innerHTML = randomCode.codeName;
     definitionP.innerHTML = randomCode.codeDefinition;
     linkP.innerHTML = randomCode.codeLink;
+    linkP.setAttribute('href', randomCode.codeLink);
     codeToType = document.getElementById("words").innerHTML;
     characters = codeToType.length;
     codeShown.innerHTML = '';
@@ -146,7 +148,7 @@ function gameStart() {
     document.getElementById("start").disabled = true;
 
     function startTimer() {
-        let seconds = startTime % 60;
+        seconds = startTime % 60;
         if (startTime >= 0 && gameWin === false && gameLose === false) {
             seconds = '0' + seconds;
             countDownTimer.innerHTML = `Game Starting in: ${seconds}`;
@@ -165,7 +167,7 @@ function gameStart() {
 
     function gameTimer() {
         let minutes = Math.floor(time/60);
-        let seconds = time % 60;
+        seconds = time % 60;
         if (time >= 0 && gameWin === false && gameLose === false) {
             if (seconds < 10) {
                 seconds = '0' + seconds;

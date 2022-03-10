@@ -27,6 +27,15 @@ p {
     font-size: 1.25rem;
 }
 
+a {
+    color: #4c6b99;
+    word-break: break-word; 
+}
+
+a:hover {
+    color: #e1d9d1;
+}
+
 div {
     color: #e1d9d1;
     font-size: 1.25rem;
