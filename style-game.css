@@ -16,7 +16,7 @@ nav {
     flex: 0 0 20vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: #22222c;
 }
 
@@ -24,14 +24,17 @@ p {
     word-break: break-word;
     color: #e1d9d1;
     text-align: center;
+    font-size: 1.25rem;
 }
 
 div {
     color: #e1d9d1;
+    font-size: 1.25rem;
 }
 
 header {
     color: #e1d9d1;
+    font-size: 1.25rem;
 }
 
 h2 {
@@ -87,12 +90,13 @@ article {
     display: flex;
     flex-basis: auto;
     justify-content: center;
-    height: 10em;
+    height: 13em;
     resize: none;
     border-radius: 10px;
     padding: 1em;
     background-color: #282a36;
     color: #e1d9d1;
+    font-size: 1.5rem;
 }
 
 #timer {
@@ -104,6 +108,7 @@ article {
 span {
     color: #e1d9d1;
     white-space: pre;
+    font-size: 1.5rem;
 
 }
 .right {
