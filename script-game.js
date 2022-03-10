@@ -3,6 +3,7 @@ const codeEntered = document.getElementById("input");
 const recycleBtn = document.getElementById("recycle");
 const startBtn = document.getElementById("start");
 const countDownTimer = document.getElementById("timer");
+const wpmDiv = document.getElementById("wpm");
 const mistakesDiv = document.getElementById("mistakes");
 const accuracyDiv = document.getElementById("accuracy");
 const landingBtn = document.getElementById("landing");
@@ -31,6 +32,9 @@ recycleBtn.addEventListener('click', () => {
     countDownTimer.innerHTML = '';
     document.getElementById("input").disabled = true;
     document.getElementById("start").disabled = false;
+    wpmDiv.innerHTML = ``;
+    accuracyDiv.innerHTML = ``;
+    mistakesDiv.innerHTML = ``;
     detectCode();
 });
 
@@ -82,7 +86,8 @@ codeEntered.addEventListener('input', () => {
         alert("You completed the game succesfully!");
         document.getElementById("input").disabled = true;
         document.getElementById("recycle").disabled = false;
-        accuracyDiv.innerHTML = `Accuracy: ${((characters - mistakeCounter) / characters) * 100.00}%`
+        wpmDiv.innerHTML = `Words per minute (WPM): ${(characters/5)/1}`;
+        accuracyDiv.innerHTML = `Accuracy: ${((characters - mistakeCounter) / characters) * 100.00}%`;
         mistakesDiv.innerHTML = `Mistakes: ${mistakeCounter}`;
         console.log(characters);
         gameWin = true;
