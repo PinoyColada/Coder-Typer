@@ -4,8 +4,8 @@ const recycleBtn = document.getElementById("recycle");
 const startBtn = document.getElementById("start");
 const countDownTimer = document.getElementById("timer");
 document.getElementById("start").disabled = false;
-let time = 0;
-let startTime = 0;
+let time = 10;
+let startTime = 5;
 let gameWin = false;
 let gameLose = false;
 let timeDuration = null;
@@ -27,8 +27,8 @@ recycleBtn.addEventListener('click', () => {
 
 startBtn.addEventListener('click', () => {
     document.getElementById("recycle").disabled = true;
-    time = 0;
-    startTime = 0;
+    time = 10;
+    startTime = 5;
     gameWin = false;
     gameLose = false;
     gameStart();
@@ -102,7 +102,6 @@ function detectCode() {
 function gameStart() {
     timeDuration = setInterval(startTimer, 1000);
     document.getElementById("start").disabled = true;
-    startTime = 5;
 
     function startTimer() {
         let seconds = startTime % 60;
@@ -118,7 +117,6 @@ function gameStart() {
             clearInterval(timeDuration);
             countDownTimer.innerHTML = '';
             document.getElementById("input").disabled = false;
-            time = 60;
             timeDuration = setInterval(gameTimer, 1000);
         }
     }
@@ -134,6 +132,11 @@ function gameStart() {
             time--;
         } else if (gameWin === true || gameLose === true){
             clearInterval(timeDuration);
+        } else if (countDownTimer.innerHTML === 'Timer: 0:00') {
+            alert("You Failed!");
+            document.getElementById("input").disabled = true;
+            document.getElementById("recycle").disabled = false;
+            gameLose = true;
         }
     }
     
