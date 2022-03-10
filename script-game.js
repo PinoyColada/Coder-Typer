@@ -1,4 +1,3 @@
-let timeDuration = setInterval(gameTimer, 1000);
 const codeShown = document.getElementById("words");
 const codeEntered = document.getElementById("input");
 const recycleBtn = document.getElementById("recycle");
@@ -6,6 +5,9 @@ const startBtn = document.getElementById("start");
 const countDownTimer = document.getElementById("timer");
 let time = 60;
 let startTime = 5;
+let reset = false;
+
+let sampleArr = ["win"];
 
 let arrayOfCode = [
     "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber));",
@@ -50,18 +52,21 @@ codeEntered.addEventListener('input', () => {
 
     if (win) {
         alert("You completed the game succesfully!");
-        time = 60;
-        detectCode();
+
     }
 });
 
 recycleBtn.addEventListener('click', () => {
     countDownTimer.innerHTML = '';
-    clearInterval(timeDuration);
+    reset = true;
+    time = 60;
+    startTime = 5;
+    document.getElementById("input").disabled = true;
     detectCode();
 });
 
 startBtn.addEventListener('click', () => {
+    reset = false;
     gameStart();
 });
 
@@ -69,7 +74,8 @@ startBtn.addEventListener('click', () => {
 // For each letter, a span is being created containing that letter and is appended to
 // the html of the element id "words"
 function detectCode() {
-    document.getElementById("words").innerHTML = arrayOfCode[Math.floor(Math.random() * arrayOfCode.length)];
+    document.getElementById("words").innerHTML = sampleArr[0];
+    // document.getElementById("words").innerHTML = arrayOfCode[Math.floor(Math.random() * arrayOfCode.length)];
     const codeToType = document.getElementById("words").innerHTML;
     codeShown.innerHTML = '';
     codeToType.replace(/&lt;/g,"<").replace(/&gt;/g,">").split('').forEach(letter => {
@@ -88,28 +94,40 @@ function detectCode() {
     codeEntered.value = null;
 }
 
-function gameTimer() {
-    let minutes = Math.floor(time/60);
-    let seconds = time % 60;
-    if (time >= 0) {
-        if (seconds < 10) {
-            seconds = '0' + seconds;
-        }
-        countDownTimer.innerHTML = `Timer: ${minutes}:${seconds}`;
-        time--;
-    }
-}
-
-function startTimer() {
-    let seconds = startTime % 5;
-    if (time >= 0) {
-        seconds = '0' + seconds;
-        countDownTimer.innerHTML = `Game Starting in: ${seconds}`;
-    }
-}
-
 function gameStart() {
-    timeDuration;
+    let timeDuration = setInterval(startTimer, 1000);
+
+    function startTimer() {
+        let seconds = startTime % 60;
+        if (startTime >= 0 && reset === false) {
+            seconds = '0' + seconds;
+            countDownTimer.innerHTML = `Game Starting in: ${seconds}`;
+            startTime--;
+        } else if (reset === true || gameWin === true || gameFailed === true) {
+            clearInterval(startTimer);
+        }
+
+        if (countDownTimer.innerHTML === 'Game Starting in: 00') {
+            clearInterval(startTimer);
+            countDownTimer.innerHTML = '';
+            document.getElementById("input").disabled = false;
+            timeDuration = setInterval(gameTimer, 1000);
+        }
+    }
+
+    function gameTimer() {
+        let minutes = Math.floor(time/60);
+        let seconds = time % 60;
+        if (time >= 0 && reset === false) {
+            if (seconds < 10) {
+                seconds = '0' + seconds;
+            }
+            countDownTimer.innerHTML = `Timer: ${minutes}:${seconds}`;
+            time--;
+        } else if (reset === true || gameWin === true || gameFailed === true){
+            clearInterval(gameTimer);
+        }
+    }
 }
 
 detectCode();
