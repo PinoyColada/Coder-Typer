@@ -4,6 +4,7 @@ const recycleBtn = document.getElementById("recycle");
 const startBtn = document.getElementById("start");
 const countDownTimer = document.getElementById("timer");
 const mistakesDiv = document.getElementById("mistakes");
+const landingBtn = document.getElementById("landing");
 document.getElementById("start").disabled = false;
 let time = 60;
 let startTime = 5;
@@ -19,6 +20,10 @@ let arrayOfCode = [
     "const isBelowThreshold = (currentValue) => currentValue < 40; const array1 = [1, 30, 39, 29, 10, 13]; console.log(array1.every(isBelowThreshold));",
     "const array1 = [1, 2, 3]; console.log(array1.includes(2)); const pets = ['cat', 'dog', 'bat']; console.log(pets.includes('cat'));"
 ]
+
+landingBtn.addEventListener('click', function(){
+    document.location.href = "index.html";
+})
 
 recycleBtn.addEventListener('click', () => {
     countDownTimer.innerHTML = '';
