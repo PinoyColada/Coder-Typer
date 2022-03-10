@@ -4,6 +4,7 @@ const recycleBtn = document.getElementById("recycle");
 const startBtn = document.getElementById("start");
 const countDownTimer = document.getElementById("timer");
 const mistakesDiv = document.getElementById("mistakes");
+const accuracyDiv = document.getElementById("accuracy");
 const landingBtn = document.getElementById("landing");
 document.getElementById("start").disabled = false;
 let time = 60;
@@ -12,6 +13,7 @@ let gameWin = false;
 let gameLose = false;
 let timeDuration = null;
 let mistakeCounter = 0;
+let characters = 0;
 
 let sampleArr = ["win", "lose", "test"];
 let arrayOfCode = [
@@ -80,7 +82,9 @@ codeEntered.addEventListener('input', () => {
         alert("You completed the game succesfully!");
         document.getElementById("input").disabled = true;
         document.getElementById("recycle").disabled = false;
+        accuracyDiv.innerHTML = `Accuracy: ${((characters - mistakeCounter) / characters) * 100.00}%`
         mistakesDiv.innerHTML = `Mistakes: ${mistakeCounter}`;
+        console.log(characters);
         gameWin = true;
     }
 });
@@ -92,6 +96,7 @@ function detectCode() {
     document.getElementById("words").innerHTML = sampleArr[Math.floor(Math.random() * sampleArr.length)];
     // document.getElementById("words").innerHTML = arrayOfCode[Math.floor(Math.random() * arrayOfCode.length)];
     const codeToType = document.getElementById("words").innerHTML;
+    characters = codeToType.length;
     codeShown.innerHTML = '';
     codeToType.replace(/&lt;/g,"<").replace(/&gt;/g,">").split('').forEach(letter => {
         if (letter === ";") {
