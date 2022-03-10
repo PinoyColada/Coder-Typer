@@ -34,6 +34,47 @@ startBtn.addEventListener('click', () => {
     gameStart();
 });
 
+codeEntered.addEventListener('input', () => {
+    let win = true;
+    const arrayCode = codeShown.querySelectorAll('span');
+    const arraySplit = codeEntered.value.split('');
+    arrayCode.forEach((letterSpan, index) => {
+        const letter = arraySplit[index];
+        if (letter === letterSpan.innerHTML) {
+            letterSpan.classList.add('right');
+            letterSpan.classList.remove('wrong');
+        } else if (letter == null){
+            letterSpan.classList.remove('right');
+            letterSpan.classList.remove('wrong');
+            win = false;
+        } else if (letter === ">" || letter === "<"){
+            if (letter === letterSpan.innerText){
+                letterSpan.classList.add('right');
+                letterSpan.classList.remove('wrong');
+            } else {
+                letterSpan.classList.add('wrong');
+                letterSpan.classList.remove('right');
+                win = false;
+            }
+        } else {
+            if (letterSpan.innerHTML === " "){
+                letterSpan.classList.add('right');
+                letterSpan.classList.remove('wrong');
+            } else {
+                letterSpan.classList.add('wrong');
+                letterSpan.classList.remove('right');
+                win = false;
+            }
+        }
+    });
+    if (win) {
+        alert("You completed the game succesfully!");
+        document.getElementById("input").disabled = true;
+        document.getElementById("recycle").disabled = false;
+        gameWin = true;
+    }
+});
+
 // This function gets a random code from the arrayOfCode and breaks down the string into letters
 // For each letter, a span is being created containing that letter and is appended to
 // the html of the element id "words"
@@ -95,50 +136,6 @@ function gameStart() {
             clearInterval(timeDuration);
         }
     }
-
-    codeEntered.addEventListener('input', () => {
-        let win = true;
-        const arrayCode = codeShown.querySelectorAll('span');
-        const arraySplit = codeEntered.value.split('');
-        arrayCode.forEach((letterSpan, index) => {
-            const letter = arraySplit[index];
-            if (letter === letterSpan.innerHTML) {
-                letterSpan.classList.add('right');
-                letterSpan.classList.remove('wrong');
-            } else if (letter == null){
-                letterSpan.classList.remove('right');
-                letterSpan.classList.remove('wrong');
-                win = false;
-            } else if (letter === ">" || letter === "<"){
-                if (letter === letterSpan.innerText){
-                    letterSpan.classList.add('right');
-                    letterSpan.classList.remove('wrong');
-                } else {
-                    letterSpan.classList.add('wrong');
-                    letterSpan.classList.remove('right');
-                    win = false;
-                }
-            } else {
-                if (letterSpan.innerHTML === " "){
-                    letterSpan.classList.add('right');
-                    letterSpan.classList.remove('wrong');
-                } else {
-                    letterSpan.classList.add('wrong');
-                    letterSpan.classList.remove('right');
-                    win = false;
-                }
-            }
-        });
-    
-        if (win) {
-            alert("You completed the game succesfully!");
-            document.getElementById("input").disabled = true;
-            document.getElementById("recycle").disabled = false;
-            gameWin = true;
-        }
-    });
-    
-
     
 }
 
