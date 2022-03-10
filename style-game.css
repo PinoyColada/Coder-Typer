@@ -1,7 +1,6 @@
 html {
-    background-color: #1e1e1e;
+    background-color: #22222c;
 }
-
 * {
     box-sizing: border-box; 
 }
@@ -15,40 +14,56 @@ body {
 
 nav {
     flex: 0 0 20vw;
-    background-color: blue;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background-color: #22222c;
 }
 
 p {
-    display: flex;
-    flex-wrap: wrap;
+    word-break: break-word;
+    color: #e1d9d1;
+    text-align: center;
+}
+
+div {
+    color: #e1d9d1;
+}
+
+header {
+    color: #e1d9d1;
+}
+
+h2 {
+    color: #e1d9d1;
+    text-decoration: underline;
+    text-decoration-color: #4c6b99;
+    text-align: center;
 }
 
 article {
     flex: 1;
-    background-color: plum;
+    background-color: #22222c;
 }
 
 .topDown {
-    height: 10vh;
-    background-color: orange;
+    background-color:#22222c;
 }
 
 .pad {
     padding: 1em;
+    border: 1em solid #191921;
 }
 
 #topHeader {
     display: flex;
     justify-content: flex-end;
-    font-size: 2vw;
 }
 
 #space {
-    padding-top: 80px;
-    background-color: black;
+    display: flex;
+    justify-content: center;
+    background-color: #22222c;
 }
 
 #container {
@@ -63,8 +78,9 @@ article {
 }
 
 #words {
-    background-color: lightblue;
+    background-color: #282a36;
     padding: 1em;
+    border-radius: 10px;
 }
 
 #input {
@@ -75,15 +91,18 @@ article {
     resize: none;
     border-radius: 10px;
     padding: 1em;
+    background-color: #282a36;
+    color: #e1d9d1;
 }
 
 #timer {
     color: white;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2vw;
 }
 
 span {
+    color: #e1d9d1;
     white-space: pre;
 
 }
@@ -95,7 +114,18 @@ span {
     color: red;
 }
 
-.btn {
-    width: 100%;
+button {
+    background-color: #4c6b99;
+    color: #e1d9d1;
+    border-radius: 15px;
 }
 
+button:hover {
+    background-color: #e1d9d1;
+    color: #4c6b99;
+}
+
+button:disabled {
+    background-color: #26364f;
+    color: #6e6863;
+}

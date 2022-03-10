@@ -109,7 +109,6 @@ codeEntered.addEventListener('input', () => {
         wpmDiv.innerHTML = `Words per minute (WPM): ${(characters/5)/1}`;
         accuracyDiv.innerHTML = `Accuracy: ${((characters - mistakeCounter) / characters) * 100.00}%`;
         mistakesDiv.innerHTML = `Mistakes: ${mistakeCounter}`;
-        console.log(characters);
         gameWin = true;
     }
 });
@@ -182,7 +181,6 @@ function gameStart() {
             gameLose = true;
         }
     }
-    
 }
 
 detectCode();
