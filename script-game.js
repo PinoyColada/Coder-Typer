@@ -3,12 +3,14 @@ const codeEntered = document.getElementById("input");
 const recycleBtn = document.getElementById("recycle");
 const startBtn = document.getElementById("start");
 const countDownTimer = document.getElementById("timer");
+const mistakesDiv = document.getElementById("mistakes");
 document.getElementById("start").disabled = false;
-let time = 10;
+let time = 60;
 let startTime = 5;
 let gameWin = false;
 let gameLose = false;
 let timeDuration = null;
+let mistakeCounter = 0;
 
 let sampleArr = ["win", "lose", "test"];
 let arrayOfCode = [
@@ -27,7 +29,7 @@ recycleBtn.addEventListener('click', () => {
 
 startBtn.addEventListener('click', () => {
     document.getElementById("recycle").disabled = true;
-    time = 10;
+    time = 60;
     startTime = 5;
     gameWin = false;
     gameLose = false;
@@ -55,6 +57,7 @@ codeEntered.addEventListener('input', () => {
                 letterSpan.classList.add('wrong');
                 letterSpan.classList.remove('right');
                 win = false;
+                mistakeCounter++;
             }
         } else {
             if (letterSpan.innerHTML === " "){
@@ -64,6 +67,7 @@ codeEntered.addEventListener('input', () => {
                 letterSpan.classList.add('wrong');
                 letterSpan.classList.remove('right');
                 win = false;
+                mistakeCounter++;
             }
         }
     });
@@ -71,6 +75,7 @@ codeEntered.addEventListener('input', () => {
         alert("You completed the game succesfully!");
         document.getElementById("input").disabled = true;
         document.getElementById("recycle").disabled = false;
+        mistakesDiv.innerHTML = `Mistakes: ${mistakeCounter}`;
         gameWin = true;
     }
 });

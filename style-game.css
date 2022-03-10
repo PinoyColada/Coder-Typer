@@ -69,6 +69,13 @@ article {
     font-size: 2rem;
 }
 
+#secondNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
 span {
     white-space: pre;
 
