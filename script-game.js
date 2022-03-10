@@ -4,6 +4,9 @@ const recycleBtn = document.getElementById("recycle");
 const startBtn = document.getElementById("start");
 const countDownTimer = document.getElementById("timer");
 const wpmDiv = document.getElementById("wpm");
+const codeHeader = document.getElementById("codeName");
+const definitionP = document.getElementById("codeDefinition");
+const linkP = document.getElementById("link");
 const mistakesDiv = document.getElementById("mistakes");
 const accuracyDiv = document.getElementById("accuracy");
 const landingBtn = document.getElementById("landing");
@@ -12,11 +15,8 @@ let time = 60;
 let startTime = 5;
 let gameWin = false;
 let gameLose = false;
-let timeDuration = null;
 let mistakeCounter = 0;
 let characters = 0;
-
-let sampleArr = ["win", "lose", "test"];
 let arrayOfCode = [
     {
         codeName: "findIndex()",
@@ -118,9 +118,12 @@ codeEntered.addEventListener('input', () => {
 // For each letter, a span is being created containing that letter and is appended to
 // the html of the element id "words"
 function detectCode() {
-    document.getElementById("words").innerHTML = sampleArr[Math.floor(Math.random() * sampleArr.length)];
-    // document.getElementById("words").innerHTML = arrayOfCode[Math.floor(Math.random() * arrayOfCode.length)];
-    const codeToType = document.getElementById("words").innerHTML;
+    let randomCode = arrayOfCode[Math.floor(Math.random() * arrayOfCode.length)];
+    codeShown.innerHTML = randomCode.codeStructure;
+    codeHeader.innerHTML = randomCode.codeName;
+    definitionP.innerHTML = randomCode.codeDefinition;
+    linkP.innerHTML = randomCode.codeLink;
+    codeToType = document.getElementById("words").innerHTML;
     characters = codeToType.length;
     codeShown.innerHTML = '';
     codeToType.replace(/&lt;/g,"<").replace(/&gt;/g,">").split('').forEach(letter => {
@@ -140,7 +143,7 @@ function detectCode() {
 }
 
 function gameStart() {
-    timeDuration = setInterval(startTimer, 1000);
+    let timeDuration = setInterval(startTimer, 1000);
     document.getElementById("start").disabled = true;
 
     function startTimer() {

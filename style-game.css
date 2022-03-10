@@ -21,6 +21,11 @@ nav {
     justify-content: space-around;
 }
 
+p {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 article {
     flex: 1;
     background-color: plum;
