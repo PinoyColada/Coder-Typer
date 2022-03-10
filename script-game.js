@@ -18,10 +18,30 @@ let characters = 0;
 
 let sampleArr = ["win", "lose", "test"];
 let arrayOfCode = [
-    "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber));",
-    "const array1 = ['a', 'b', 'c', 'd', 'e']; console.log(array1.copyWithin(0, 3, 4)); console.log(array1.copyWithin(1, 3));",
-    "const isBelowThreshold = (currentValue) => currentValue < 40; const array1 = [1, 30, 39, 29, 10, 13]; console.log(array1.every(isBelowThreshold));",
-    "const array1 = [1, 2, 3]; console.log(array1.includes(2)); const pets = ['cat', 'dog', 'bat']; console.log(pets.includes('cat'));"
+    {
+        codeName: "findIndex()",
+        codeStructure: "const array1 = [5, 12, 8, 130, 44]; const isLargeNumber = (element) => element > 13; console.log(array1.findIndex(isLargeNumber));",
+        codeDefinition: "The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex"
+    },
+    {
+        codeName: "copyWithin()",
+        codeStructure: "const array1 = ['a', 'b', 'c', 'd', 'e']; console.log(array1.copyWithin(0, 3, 4)); console.log(array1.copyWithin(1, 3));",
+        codeDefinition: "The copyWithin() method shallow copies part of an array to another location in the same array and returns it without modifying its length.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"
+    },
+    {
+        codeName: "every()",
+        codeStructure: "const isBelowThreshold = (currentValue) => currentValue < 40; const array1 = [1, 30, 39, 29, 10, 13]; console.log(array1.every(isBelowThreshold));",
+        codeDefinition: "The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every"
+    },
+    {
+        codeName: "includes()",
+        codeStructure: "const array1 = [1, 2, 3]; console.log(array1.includes(2)); const pets = ['cat', 'dog', 'bat']; console.log(pets.includes('cat'));",
+        codeDefinition: "The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"
+    },
 ]
 
 landingBtn.addEventListener('click', function(){

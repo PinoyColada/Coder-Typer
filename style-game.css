@@ -16,6 +16,9 @@ body {
 nav {
     flex: 0 0 20vw;
     background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 article {
@@ -73,13 +76,6 @@ article {
     color: white;
     text-align: center;
     font-size: 2rem;
-}
-
-#secondNav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    
 }
 
 span {
