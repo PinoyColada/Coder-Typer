@@ -29,18 +29,13 @@
 ##### You are now at the main game page. You will be a given a line of code in one box and in another box where you must type in. You must simply type the code without any mistakes and under the given time to win.
 ***
 
-### ***Screenshots***
+### ***Gifs***
 
-##### ___Image Placeholder Header 1___
-![JJK](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsomoskudasai.com%2Fwp-content%2Fuploads%2F2020%2F08%2Fjujutsu.jpg&f=1&nofb=1)
+<img src="https://media.giphy.com/media/fpQxvygC4FxSVgKpAK/giphy.gif" width="850" height="500"/>
 
-##### ___Image Placeholder Header 2___
-![Bleach](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmangathrill.com%2Fwp-content%2Fuploads%2F2019%2F11%2Fich.png&f=1&nofb=1)
-***
 
-##### ___Image Placeholder Header 3___
-![Naruto](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic3.cbrimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F01%2FNaruto.jpg&f=1&nofb=1)
-***
+<img src="https://media.giphy.com/media/w2T19ijFm5KOcMyaDv/giphy.gif" width="850" height="500"/>
+
 
 ### ***Future Updates***
 - [ ] Make a "Hard-Core" game mode where you lose if you make a single mistake
