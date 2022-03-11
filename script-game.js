@@ -146,7 +146,7 @@ codeEntered.addEventListener('input', () => {
         document.getElementById("input").disabled = true;
         document.getElementById("recycle").disabled = false;
         wpmDiv.innerHTML = `Words per minute (WPM): ${(characters/5)/1}`;
-        accuracyDiv.innerHTML = `Accuracy: ${((characters - mistakeCounter) / characters) * 100.00}%`;
+        accuracyDiv.innerHTML = `Accuracy: ${Math.round((characters - mistakeCounter) / characters) * 100.00}%`;
         mistakesDiv.innerHTML = `Mistakes: ${mistakeCounter}`;
         gameWin = true;
     }
