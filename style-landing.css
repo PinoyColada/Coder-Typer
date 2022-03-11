@@ -1,9 +1,17 @@
 html {
-    background-image: url(https://i.ibb.co/HDcsTwb/Screen-Shot-2022-03-07-at-3-35-56-PM.png);
+    background-image: url(https://i.ibb.co/hFSFz7w/Screen-Shot-2022-03-10-at-8-05-06-PM.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #1e1e1e;
 }
+
+#topHeader {
+    display: flex;
+    justify-content: flex-end;
+    background-color:#22222c;
+}
+
+
 
 .space {
     padding-top: 39px;
@@ -53,13 +61,13 @@ a:hover {
 }
 
 button {
-    color: #dadaa3;
-    background-color: transparent;
-    font-size: 40px;
+    font-size: 2rem;
+    background-color: #4c6b99;
+    color: #e1d9d1;
+    border-radius: 15px;
 }
 
-#gameBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+button:hover {
+    background-color: #e1d9d1;
+    color: #4c6b99;
 }

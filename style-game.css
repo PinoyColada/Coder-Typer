@@ -28,6 +28,7 @@ p {
 }
 
 a {
+    text-align: center;
     color: #4c6b99;
     word-break: break-word; 
 }
