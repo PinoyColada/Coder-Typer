@@ -43,6 +43,43 @@ let arrayOfCode = [
         codeDefinition: "The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.",
         codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"
     },
+    {
+        codeName: "flat()",
+        codeStructure: "const arr1 = [0, 1, 2, [3, 4]]; console.log(arr1.flat()); const arr2 = [0, 1, 2, [[[3, 4]]]]; console.log(arr2.flat(2));",
+        codeDefinition: "The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat"
+    },
+    {
+        codeName: "map()",
+        codeStructure: "const array1 = [1, 4, 9, 16]; const map1 = array1.map(x => x * 2); console.log(map1);",
+        codeDefinition: "The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+    },
+    {
+        codeName: "keys()",
+        codeStructure: "const array1 = ['a', 'b', 'c']; const iterator = array1.keys(); for (const key of iterator) { console.log(key) };",
+        codeDefinition: "The keys() method returns a new Array Iterator object that contains the keys for each index in the array.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys"
+    },
+    {
+        codeName: "entries()",
+        codeStructure: "const array1 = ['a', 'b', 'c']; const iterator1 = array1.entries(); console.log(iterator1.next().value); console.log(iterator1.next().value);",
+        codeDefinition: "The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries"
+    },
+    {
+        codeName: "some()",
+        codeStructure: "const array = [1, 2, 3, 4, 5]; const even = (element) => element % 2 === 0; console.log(array.some(even));",
+        codeDefinition: "The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array,"
+         + " it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some"
+    },
+    {
+        codeName: "unshift()",
+        codeStructure: "const array1 = [1, 2, 3]; console.log(array1.unshift(4, 5)); console.log(array1);",
+        codeDefinition: "The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.",
+        codeLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"
+    }
 ]
 
 landingBtn.addEventListener('click', function(){
@@ -107,16 +144,17 @@ codeEntered.addEventListener('input', () => {
         alert("You completed the game succesfully!");
         document.getElementById("input").disabled = true;
         document.getElementById("recycle").disabled = false;
-        wpmDiv.innerHTML = `Words per minute (WPM): ${(characters/5)/60 - 1}`;
+        wpmDiv.innerHTML = `Words per minute (WPM): ${(characters/5)/1}`;
         accuracyDiv.innerHTML = `Accuracy: ${((characters - mistakeCounter) / characters) * 100.00}%`;
         mistakesDiv.innerHTML = `Mistakes: ${mistakeCounter}`;
         gameWin = true;
     }
 });
 
-// This function gets a random code from the arrayOfCode and breaks down the string into letters
-// For each letter, a span is being created containing that letter and is appended to
-// the html of the element id "words"
+// This function gets a random code from the arrayOfCode and breaks down the codeStructure property into letters
+// It gets all the properties of it and displays it for the user as well
+// For each letter, a span is being created containing that letter and is appended to the html of the element id "words"
+// When it detects a ";" character, it creates a br element so the span generates on next line
 function detectCode() {
     let randomCode = arrayOfCode[Math.floor(Math.random() * arrayOfCode.length)];
     codeShown.innerHTML = randomCode.codeStructure;
@@ -143,21 +181,19 @@ function detectCode() {
     codeEntered.value = null;
 }
 
+// creates a starting timer and disables the start button to be pressed 
 function gameStart() {
     let timeDuration = setInterval(startTimer, 1000);
     document.getElementById("start").disabled = true;
 
+    // counts down the starting time and changes to game timer once it reaches 0
     function startTimer() {
         seconds = startTime % 60;
         if (startTime >= 0 && gameWin === false && gameLose === false) {
             seconds = '0' + seconds;
             countDownTimer.innerHTML = `Game Starting in: ${seconds}`;
             startTime--;
-        } else if (gameWin === true || gameLose === true){
-            clearInterval(timeDuration);
-        }
-
-        if (countDownTimer.innerHTML === 'Game Starting in: 00') {
+        } else if (countDownTimer.innerHTML === 'Game Starting in: 00') {
             clearInterval(timeDuration);
             countDownTimer.innerHTML = '';
             document.getElementById("input").disabled = false;
@@ -165,6 +201,7 @@ function gameStart() {
         }
     }
 
+    // counts down the main game time and will stop once the game is completed succesfully or if time runs out
     function gameTimer() {
         let minutes = Math.floor(time/60);
         seconds = time % 60;

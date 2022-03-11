@@ -111,7 +111,7 @@ article {
 #timer {
     color: white;
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5rem;
 }
 
 span {
@@ -129,6 +129,7 @@ span {
 }
 
 button {
+    font-size: 1.5rem;
     background-color: #4c6b99;
     color: #e1d9d1;
     border-radius: 15px;
