@@ -31,10 +31,10 @@
 
 ### ***Gifs***
 
-<img src="https://media.giphy.com/media/fpQxvygC4FxSVgKpAK/giphy.gif" width="850" height="500"/>
+![Code-1](https://cdn.kapwing.com/final_622b88c6437bfe00b5fa6155_1021.gif)
 
 
-<img src="https://media.giphy.com/media/w2T19ijFm5KOcMyaDv/giphy.gif" width="850" height="500"/>
+![Code-2](https://cdn.kapwing.com/final_622b881a572daa00613a6c27_105814.gif)
 
 
 ### ***Future Updates***
@@ -47,7 +47,7 @@
 
 ##### Inspiration: [TypeRacer](https://play.typeracer.com/)
 
-##### Images used as placeholders: [DuckDuckGo Search](http://www.duckduckgo.com)
+##### Gifs: [Kapwing](https://www.kapwing.com/)
 
 ##### Pieces of Code used: [MDN](https://developer.mozilla.org/en-US/)
 
