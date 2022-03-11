@@ -102,6 +102,7 @@ startBtn.addEventListener('click', () => {
     startTime = 5;
     gameWin = false;
     gameLose = false;
+    mistakeCounter = 0;
     gameStart();
 });
 
@@ -173,9 +174,9 @@ function detectCode() {
             codeShown.appendChild(letterSpan);
             codeShown.appendChild(breakSpan);
         } else {
-            const letterSpace = document.createElement('span');
-            letterSpace.innerHTML = letter;
-            codeShown.appendChild(letterSpace);
+            const letterSpan = document.createElement('span');
+            letterSpan.innerHTML = letter;
+            codeShown.appendChild(letterSpan);
         }
     });
     codeEntered.value = null;
