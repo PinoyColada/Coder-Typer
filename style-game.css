@@ -24,7 +24,7 @@ p {
     word-break: break-word;
     color: #e1d9d1;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 a {
@@ -38,12 +38,12 @@ a:hover {
 
 div {
     color: #e1d9d1;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 header {
     color: #e1d9d1;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 h2 {
@@ -129,7 +129,7 @@ span {
 }
 
 button {
-    font-size: 1.5rem;
+    font-size: 2rem;
     background-color: #4c6b99;
     color: #e1d9d1;
     border-radius: 15px;
