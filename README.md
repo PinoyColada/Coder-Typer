@@ -25,9 +25,8 @@
 
 ### ***Getting Started***
 
-##### Once you enter the website, you will start off at my landing page of a brief introduction of me and my GitHub and LinkedIn profiles link buttons. Just simply click the button "Continue" to continue on the main game page.
+##### Once you enter the website, you will start off at my landing page of a brief introduction of me and my GitHub and LinkedIn profiles link buttons. Just simply click the button "Game Page" to continue on the main game page.
 ##### You are now at the main game page. You will be a given a line of code in one box and in another box where you must type in. You must simply type the code without any mistakes and under the given time to win.
-##### Ready to test your skills? Try the "Hard-Core" game mode where you will be given one chance to type line(s) of code perfectly with no errors. If you do make a mistake, you automatically fail and will be directed to another set of syntax to try again.
 ***
 
 ### ***Screenshots***
@@ -44,6 +43,8 @@
 ***
 
 ### ***Future Updates***
+- [ ] Make a "Hard-Core" game mode where you lose if you make a single mistake
+- [ ] Add audio to the buttons everytime they click
 - [ ] Make the game online so you can go against other players
 - [ ] Add more game modes
 
