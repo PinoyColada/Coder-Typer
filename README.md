@@ -25,25 +25,21 @@
 
 ### ***Getting Started***
 
-##### Once you enter the website, you will start off at my landing page of a brief introduction of me and my GitHub and LinkedIn profiles link buttons. Just simply click the button "Continue" to continue on the main game page.
+##### Once you enter the website, you will start off at my landing page of a brief introduction of me and my GitHub and LinkedIn profiles link buttons. Just simply click the button "Game Page" to continue on the main game page.
 ##### You are now at the main game page. You will be a given a line of code in one box and in another box where you must type in. You must simply type the code without any mistakes and under the given time to win.
-##### Ready to test your skills? Try the "Hard-Core" game mode where you will be given one chance to type line(s) of code perfectly with no errors. If you do make a mistake, you automatically fail and will be directed to another set of syntax to try again.
 ***
 
-### ***Screenshots***
+### ***Gifs***
 
-##### ___Image Placeholder Header 1___
-![JJK](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsomoskudasai.com%2Fwp-content%2Fuploads%2F2020%2F08%2Fjujutsu.jpg&f=1&nofb=1)
+![Code-1](https://cdn.kapwing.com/final_622b88c6437bfe00b5fa6155_1021.gif)
 
-##### ___Image Placeholder Header 2___
-![Bleach](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmangathrill.com%2Fwp-content%2Fuploads%2F2019%2F11%2Fich.png&f=1&nofb=1)
-***
 
-##### ___Image Placeholder Header 3___
-![Naruto](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic3.cbrimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F01%2FNaruto.jpg&f=1&nofb=1)
-***
+![Code-2](https://cdn.kapwing.com/final_622b881a572daa00613a6c27_105814.gif)
+
 
 ### ***Future Updates***
+- [ ] Make a "Hard-Core" game mode where you lose if you make a single mistake
+- [ ] Add audio to the buttons everytime they click
 - [ ] Make the game online so you can go against other players
 - [ ] Add more game modes
 
@@ -51,9 +47,12 @@
 
 ##### Inspiration: [TypeRacer](https://play.typeracer.com/)
 
-##### Images used as placeholders: [DuckDuckGo Search](http://www.duckduckgo.com)
+##### Gifs: [Kapwing](https://www.kapwing.com/)
 
 ##### Pieces of Code used: [MDN](https://developer.mozilla.org/en-US/)
 
 ##### Progress Checker: [Trello](https://trello.com/en-US)
+
+##### Helped with bugs: [Stackoverflow](https://stackoverflow.com/)
+
 
