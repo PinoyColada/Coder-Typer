@@ -218,7 +218,7 @@ function detectCode() {
   codeEntered.value = null;
 }
 
-// creates a starting timer and disables the start button to be pressed
+// creates a starting timer and disables the start button
 function gameStart() {
   let timeDuration = setInterval(startTimer, 1000);
   document.getElementById("start").disabled = true;
