@@ -110,6 +110,15 @@ let arrayOfCode = [
     codeLink:
       "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift",
   },
+  {
+    codeName: "reduceRight()",
+    codeStructure:
+      "const array1 = [[0, 1], [2, 3], [4, 5]]; const result = array1.reduceRight((accumulator, currentValue) => accumulator.concat(currentValue));",
+    codeDefinition:
+      "The reduceRight() method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.",
+    codeLink:
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight",
+  },
 ];
 
 landingBtn.addEventListener("click", function () {
