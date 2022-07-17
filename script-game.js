@@ -18,6 +18,9 @@ let gameLose = false;
 let mistakeCounter = 0;
 let characters = 0;
 let seconds;
+
+// contains all information of each array function that is listed
+
 let arrayOfCode = [
   {
     codeName: "findIndex()",
